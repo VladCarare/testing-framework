@@ -31,7 +31,7 @@ Any interatomic potential that can be instantiated as an ASE
  calculator can be tested. The potential models (each in its own
  directory) are kept in a directory structure separate from the
  testing-framework structure above. Examples are given under the
- `example_run_dir` directory. Here the first level subdirectories specify
+ `example_models` directory. Here the first level subdirectories specify
  the test-system, and under each are `models` and `run_dir` subdirectories,
  the former contains the different potentials, the latter is where
  the tests are actually run and the test results appear. The test-system
