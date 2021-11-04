@@ -1,0 +1,158 @@
+
+###### START RUN Thu Nov  4 14:11:49 2021 ######
+Model CASTEP, Test S8_dissociation
+Test run at 2021-11-04 14:11
+
+model file: ../../models/CASTEP/model.py
+============================================================
+import os
+from distutils import spawn
+from ase.calculators.castep import Castep
+
+model_abs_dir = os.path.abspath(os.path.dirname(__file__))
+
+mpirun = "srun"
+mpirun_args = "srun --distribution=block:block --hint=nomultithread"
+castep = "castep.mpi"
+
+os.environ['CASTEP_COMMAND'] = '{0} {1} {2}'.format(mpirun, mpirun_args, castep)
+
+no_checkpoint = True
+
+def start(test_name):
+    global calculator
+    calculator = Castep(directory=test_name,
+                        cut_off_energy=300,
+                        spin_polarized=False,
+                        opt_strategy='speed',
+                        xc_functional='PBEsol',
+                        max_scf_cycles=250,
+                        calculate_stress=True,
+                        smearing_width='0.04',
+                        mixing_scheme='pulay',
+                        kpoints_list='0 0 0 1',
+                        species_pot = ("Si","{}/S_C19_PBESOL_OTF-FromArcher2-Castep20P11.usp".format(model_abs_dir)),
+                        perc_extra_bands=100)
+============================================================
+test file: ../../tests/S8_dissociation/test.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 124, in <module>
+    sys.stdout.write(open(test_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../tests/S8_dissociation/test.py'
+
+###### START RUN Thu Nov  4 14:17:57 2021 ######
+Model CASTEP, Test S8_dissociation
+Test run at 2021-11-04 14:17
+
+model file: ../../models/CASTEP/model.py
+============================================================
+import os
+from distutils import spawn
+from ase.calculators.castep import Castep
+
+model_abs_dir = os.path.abspath(os.path.dirname(__file__))
+
+mpirun = "srun"
+mpirun_args = "srun --distribution=block:block --hint=nomultithread"
+castep = "castep.mpi"
+
+os.environ['CASTEP_COMMAND'] = '{0} {1} {2}'.format(mpirun, mpirun_args, castep)
+
+no_checkpoint = True
+
+def start(test_name):
+    global calculator
+    calculator = Castep(directory=test_name,
+                        cut_off_energy=300,
+                        spin_polarized=False,
+                        opt_strategy='speed',
+                        xc_functional='PBEsol',
+                        max_scf_cycles=250,
+                        calculate_stress=True,
+                        smearing_width='0.04',
+                        mixing_scheme='pulay',
+                        kpoints_list='0 0 0 1',
+                        species_pot = ("Si","{}/S_C19_PBESOL_OTF-FromArcher2-Castep20P11.usp".format(model_abs_dir)),
+                        perc_extra_bands=100)
+============================================================
+test file: ../../tests/S8_dissociation/test.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 124, in <module>
+    sys.stdout.write(open(test_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../tests/S8_dissociation/test.py'
+
+###### START RUN Thu Nov  4 14:30:15 2021 ######
+Model CASTEP, Test S8_dissociation
+Test run at 2021-11-04 14:30
+
+model file: ../../models/CASTEP/model.py
+============================================================
+import os
+from distutils import spawn
+from ase.calculators.castep import Castep
+
+model_abs_dir = os.path.abspath(os.path.dirname(__file__))
+
+mpirun = "srun"
+mpirun_args = "srun --distribution=block:block --hint=nomultithread"
+castep = "castep.mpi"
+
+os.environ['CASTEP_COMMAND'] = '{0} {1} {2}'.format(mpirun, mpirun_args, castep)
+
+no_checkpoint = True
+
+def start(test_name):
+    global calculator
+    calculator = Castep(directory=test_name,
+                        cut_off_energy=300,
+                        spin_polarized=False,
+                        opt_strategy='speed',
+                        xc_functional='PBEsol',
+                        max_scf_cycles=250,
+                        calculate_stress=True,
+                        smearing_width='0.04',
+                        mixing_scheme='pulay',
+                        kpoints_list='0 0 0 1',
+                        species_pot = ("Si","{}/S_C19_PBESOL_OTF-FromArcher2-Castep20P11.usp".format(model_abs_dir)),
+                        perc_extra_bands=100)
+============================================================
+test file: /work/e89/e89/vc381/Calculations/dev/testing-framework/tests/S/S8_dissociation/test.py
+============================================================
+from utilities import path_of_file, evaluate_file
+
+filenamelist = ["S8_dissociation.xyz"]
+
+for filename in filenamelist: 
+    evaluate_file(path_of_file(__file__)+"/"+filename)
+
+properties = {"files": filenamelist}
+============================================================
+castep call stderr:
+srun: error: Job rejected: Please specify a partition name.
+srun: error: Unable to allocate resources: Unspecified error
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 139, in <module>
+    import test  # import and run the current test
+  File "/work/e89/e89/vc381/Calculations/dev/testing-framework/tests/S/S8_dissociation/test.py", line 6, in <module>
+    evaluate_file(path_of_file(__file__)+"/"+filename)
+  File "/lus/cls01095/work/e89/e89/vc381/Calculations/dev/testing-framework/scripts/../share/utilities.py", line 287, in evaluate_file
+    evaluate(a, do_energy, do_forces, do_stress, do_predictive_error)
+  File "/lus/cls01095/work/e89/e89/vc381/Calculations/dev/testing-framework/scripts/../share/utilities.py", line 311, in evaluate
+    stress = atoms.get_stress()
+  File "/work/e89/e89/vc381/.local/lib/python3.8/site-packages/ase/atoms.py", line 822, in get_stress
+    stress = self._calc.get_stress(self)
+  File "/work/e89/e89/vc381/.local/lib/python3.8/site-packages/ase/calculators/castep.py", line 69, in decor_getf
+    return getf(self, atoms, *args, **kwargs)
+  File "/work/e89/e89/vc381/.local/lib/python3.8/site-packages/ase/calculators/castep.py", line 1786, in get_stress
+    self.update(atoms)
+  File "/work/e89/e89/vc381/.local/lib/python3.8/site-packages/ase/calculators/castep.py", line 1842, in update
+    self.calculate(atoms)
+  File "/work/e89/e89/vc381/.local/lib/python3.8/site-packages/ase/calculators/castep.py", line 1867, in calculate
+    self.read()
+  File "/work/e89/e89/vc381/.local/lib/python3.8/site-packages/ase/calculators/castep.py", line 851, in read
+    out = paropen(castep_file, 'r')
+  File "/work/e89/e89/vc381/.local/lib/python3.8/site-packages/ase/parallel.py", line 36, in paropen
+    return open(name, mode, buffering, encoding)
+FileNotFoundError: [Errno 2] No such file or directory: '/lus/cls01095/work/e89/e89/vc381/Calculations/dev/testing-framework/example_models/S/run_dir/run_S-model-CASTEP-test-S8_dissociation/S8_dissociation/castep.castep'

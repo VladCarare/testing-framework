@@ -1,0 +1,30 @@
+#######################################################
+#CASTEP cell file: /lus/cls01095/work/e89/e89/vc381/Calculations/dev/testing-framework/example_models/S/run_dir/run_S-model-CASTEP-test-S8_dissociation/S8_dissociation/castep.cell
+#Created using the Atomic Simulation Environment (ASE)#
+#######################################################
+
+%BLOCK LATTICE_CART
+20.000000  0.000000  0.000000
+ 0.000000 20.000000  0.000000
+ 0.000000  0.000000 20.000000
+%ENDBLOCK LATTICE_CART
+
+%BLOCK POSITIONS_ABS
+S 10.737360 10.512440 13.207200
+S  9.723000 12.045660 12.277740
+S 12.064840  9.652260 11.867340
+S 10.652080 13.847920 12.708980
+S 13.937500 10.452880 12.176900
+S 11.895560 14.348280 11.144680
+S 14.276420 11.956500 10.794200
+S 13.836480 13.796480 11.609380
+%ENDBLOCK POSITIONS_ABS
+
+%BLOCK SPECIES_POT
+Si /lus/cls01095/work/e89/e89/vc381/Calculations/dev/testing-framework/example_models/S/models/CASTEP/S_C19_PBESOL_OTF-FromArcher2-Castep20P11.usp
+%ENDBLOCK SPECIES_POT
+
+%BLOCK KPOINTS_LIST
+0 0 0 1
+%ENDBLOCK KPOINTS_LIST
+

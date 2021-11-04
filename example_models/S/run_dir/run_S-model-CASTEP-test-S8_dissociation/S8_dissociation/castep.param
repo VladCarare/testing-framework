@@ -1,0 +1,36 @@
+#######################################################
+#CASTEP param file: /lus/cls01095/work/e89/e89/vc381/Calculations/dev/testing-framework/example_models/S/run_dir/run_S-model-CASTEP-test-S8_dissociation/S8_dissociation/castep.param
+#Created using the Atomic Simulation Environment (ASE)#
+# Internal settings of the calculator
+# This can be switched off by settings
+# calc._export_settings = False
+# If stated, this will be automatically processed
+# by ase.io.castep.read_seed()
+# ASE_INTERFACE _build_missing_pspots : True
+# ASE_INTERFACE _castep_command : srun srun --distribution=block:block --hint=nomultithread castep.mpi
+# ASE_INTERFACE _castep_pp_path : /lus/cls01095/work/e89/e89/vc381/Calculations/dev/testing-framework/example_models/S/run_dir/run_S-model-CASTEP-test-S8_dissociation
+# ASE_INTERFACE _check_checkfile : True
+# ASE_INTERFACE _copy_pspots : False
+# ASE_INTERFACE _directory : /lus/cls01095/work/e89/e89/vc381/Calculations/dev/testing-framework/example_models/S/run_dir/run_S-model-CASTEP-test-S8_dissociation/S8_dissociation
+# ASE_INTERFACE _export_settings : True
+# ASE_INTERFACE _find_pspots : False
+# ASE_INTERFACE _force_write : True
+# ASE_INTERFACE _label : castep
+# ASE_INTERFACE _link_pspots : True
+# ASE_INTERFACE _pedantic : False
+# ASE_INTERFACE _prepare_input_only : False
+# ASE_INTERFACE _rename_existing_dir : True
+# ASE_INTERFACE _set_atoms : False
+# ASE_INTERFACE _track_output : False
+# ASE_INTERFACE _try_reuse : False
+#######################################################
+
+CUT_OFF_ENERGY: 300.0 
+XC_FUNCTIONAL: PBEsol
+CALCULATE_STRESS: TRUE
+SMEARING_WIDTH: 0.04 
+MAX_SCF_CYCLES: 250
+MIXING_SCHEME: pulay
+SPIN_POLARIZED: FALSE
+PERC_EXTRA_BANDS: 100.0
+OPT_STRATEGY: speed
